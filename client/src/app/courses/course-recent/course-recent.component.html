@@ -1,0 +1,82 @@
+<p class="bg-dark text-white p-2 pl-4">Recent Posts</p>
+
+<div *ngFor="let entry of allEntries; let i = index">
+<a class="mb-2" (click)="redirect(entry._id)">
+  <div class="row">
+    <div class="col-4">
+        <img src="http://localhost:4000/uploads/{{ entry.image }}" alt="{{ entry.image }}" class="img-fluid">
+    </div>
+    <div class="col-8 pl-0">
+        <h5>{{ entry.title }}</h5>
+        <p><small>Posted On: {{ entry?.enteredDate | date }}</small></p>
+    </div>
+  </div>
+</a>
+</div>
+
+<br>
+
+<!-- <div class="container-fluid px-5 mx-1"> -->
+    <!-- <p class="bg-dark text-white p-2 pl-4">Recent Posts</p>
+
+    <a>
+      <div class="row">
+        <div class="col-4">
+            <img src="../../../assets/Images/Angular9.jpg" alt="Angular 9" class="img-fluid">
+        </div>
+        <div class="col-8 pl-0">
+            <h5>Angular 9 Features</h5>
+            <p><small>Posted On: April 26, 2020</small></p>
+        </div>
+      </div>
+    </a>
+
+    <a>
+      <div class="row">
+        <div class="col-4">
+            <img src="../../../assets/Images/Typescript.jpeg" alt="Typescript" class="img-fluid">
+        </div>
+        <div class="col-8 pl-0">
+            <h5>Typescript Language Features</h5>
+            <p><small>Posted On: April 26, 2020</small></p>
+        </div>
+      </div>
+    </a>
+
+    <a>
+      <div class="row">
+        <div class="col-4">
+            <img src="../../../assets/Images/Bootstrap4.jpeg" alt="Bootstrap4" class="img-fluid">
+        </div>
+        <div class="col-8 pl-0">
+            <h5>Bootstrap 4 Framework Features</h5>
+            <p><small>Posted On: April 26, 2020</small></p>
+        </div> 
+    </div>
+    </a>
+
+    <a>
+      <div class="row">
+        <div class="col-4">
+            <img src="../../../assets/Images/HTML5.png" alt="HTML5" class="img-fluid">
+        </div>
+        <div class="col-8 pl-0">
+            <h5>HTML 5 Example Features</h5>
+            <p><small>Posted On: April 26, 2020</small></p>
+        </div> 
+      </div>
+    </a>
+
+    <a>
+      <div class="row">
+        <div class="col-4">
+            <img src="../../../assets/Images/NodeJS.png" alt="NodeJS" class="img-fluid">
+        </div>
+        <div class="col-8 pl-0">
+            <h5>NodeJS Framework Features</h5>
+            <p><small>Posted On: April 26, 2020</small></p>
+        </div> 
+      </div>
+    </a>
+    <br> -->
+<!-- </div> -->

@@ -1,0 +1,41 @@
+div.container-fluid {
+    padding: 50px 100px 0 50px;
+    min-height: 580px;
+    height: auto;
+}
+
+a.nav-link {
+    background-color: lightgrey;
+    color: black;
+    margin-bottom: 5px;
+}
+
+a.nav-link:hover {
+    background-color: royalblue;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* div.post {
+    min-height: 530px;
+    height: auto;
+} */
+
+/* @media screen and (max-width: 576px) {
+    div.post {
+        min-height: ;
+        height: auto;
+    }
+} */
+
+img {
+    height: 50px;
+}
+
+td {
+    vertical-align: middle;
+}
+
+input.ng-invalid.ng-touched {
+    border-color: red;
+}

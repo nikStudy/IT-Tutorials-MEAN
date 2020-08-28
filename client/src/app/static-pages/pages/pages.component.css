@@ -1,0 +1,10 @@
+div {
+    height: 520px;
+}
+
+/* Set height to 'auto' for smaller screen sizes */
+@media screen and (max-width: 576px) {
+    div {
+        height: auto;
+    }    
+}

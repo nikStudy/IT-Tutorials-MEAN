@@ -1,0 +1,30 @@
+.bg-grey {
+    background-color: #555;
+    color: white;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    background-color: darkgray;
+    width: 100%;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #555;
+    border-color: #555;
+}
+
+@media screen and (min-width: 1200px){
+    .courses1 {
+        padding-right: 50px;
+    }
+    
+    .courses2 {
+        padding-left: 50px;
+    }
+}

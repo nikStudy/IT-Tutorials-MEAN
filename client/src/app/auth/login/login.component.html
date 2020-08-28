@@ -1,0 +1,21 @@
+<div class="container-fluid mt-5">
+    <div id="login">
+      <h2>Admin Login</h2><br>
+    
+      <form [formGroup]='loginForm'>
+        <div *ngIf="datasaved && loginForm.untouched" class="alert alert-danger">{{ message }}</div>
+  
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username" formControlName="emailid" id="email">
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password" id="pass">
+        </div>
+    
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid" (click)="checkdata()">Login</button>
+      </form>
+    </div>
+      <br><br><br><br>
+  </div>
+    

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">IT Tutorials</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/courses" routerLinkActive="active" class="nav-link">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/pages/about" routerLinkActive="active" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contact Us</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mr-4">
+        <li class="nav-item" *ngIf="!sess">
+          <a routerLink="/login" routerLinkActive="active" class="nav-link">Admin Login</a>
+        </li>
+        <li class="nav-item" *ngIf="sess">
+          <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item" *ngIf="sess">
+          <a routerLink="/registration" routerLinkActive="active" class="nav-link">Registration</a>
+        </li>
+        <li class="nav-item" *ngIf="sess">
+          <a routerLink="/login" routerLinkActive="active" class="nav-link">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

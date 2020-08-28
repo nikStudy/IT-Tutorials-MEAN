@@ -1,0 +1,116 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/entries" routerLinkActive="active">Entries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+            <br>
+        </div>
+
+        <div class="col-md-9" *ngIf="!showgrid">
+            <h1>Create Post</h1><br>
+
+            <form [formGroup]='createForm'>
+                <div *ngIf="datasaved && createForm.untouched" class="alert alert-success">{{ message }}</div>
+          
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="title">Title*</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Title" formControlName="title" id="title" required>
+                        <span class="font-italic" *ngIf = "createForm.controls['title'].touched && createForm.controls['title'].hasError('required')">Please enter title</span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="short_descrip">Short Description*</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Short Description" formControlName="short_descrip" id="short_descrip" required>
+                        <span class="font-italic" *ngIf = "createForm.controls['short_descrip'].touched && createForm.controls['short_descrip'].hasError('required')">Please enter short description</span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="full_descrip">Full Description</label>
+                    </div>
+                    <div class="col-md-9">
+                        <textarea class="form-control" rows="3" placeholder="Full Description" formControlName="full_descrip" id="full_descrip"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="author">Author*</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Author" formControlName="author" id="author" required>
+                        <span class="font-italic" *ngIf = "createForm.controls['author'].touched && createForm.controls['author'].hasError('required')">Please enter author</span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="image">Upload Image*</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="file" #Image accept="image/*" formControlName="imageDummy" id="image" (change)="handleFileInput($event.target.files)">
+                        <img width="100px" height="100px" src="{{postImage}}">
+                        <div class="font-italic" *ngIf = "createForm.controls['imageDummy'].touched && createForm.controls['imageDummy'].hasError('required')">Please upload the image</div>
+                    </div>
+                </div>
+          
+                <button type="submit" class="btn btn-success" [disabled]="createForm.invalid" (click)="postdata()">Save</button>
+                <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+              </form>
+              <br>
+        </div>
+
+        <div class="col-md-9 post" *ngIf="showgrid">
+            <h1>Post</h1><br>
+            <span *ngIf="datasaved" class="alert alert-success mb-3">{{ message }}</span>
+            <span style="float: right;" class="mb-3">
+                <button type="button" class="btn btn-success" (click)="addEntry()">Add Post</button>
+            </span>
+            
+            <br>
+            <table class="table table-hover table-bordered table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Created At</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let entry of allEntries; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td><img src="http://localhost:4000/uploads/{{ entry.image }}" alt="Image" class="img-fluid"></td>
+                    <td>{{ entry.title }}</td>
+                    <td>{{ entry.enteredDate | date: 'mediumDate' }}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-info" (click)="editEntry(entry._id)">Edit</button>
+                        <button type="button" class="btn btn-sm btn-danger" (click)="deleteEntry(entry._id)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid mt-5">
+  <div id="register">
+    <h2>User Registration</h2><br>
+  
+    <form [formGroup]='regForm'>
+      <div *ngIf="datasaved && regForm.untouched" class="alert alert-success">{{ message }}</div>
+
+      <div class="form-group">
+        <label for="fname">First Name: *</label>
+        <input type="text" class="form-control" placeholder="First Name" formControlName="firstname" id="fname">
+      </div>
+
+      <div class="form-group">
+        <label for="lname">Last Name: *</label>
+        <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname" id="lname">
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email ID: *</label>
+        <input type="email" class="form-control" placeholder="Email ID" formControlName="emailid" id="email">
+        <span class="font-italic" *ngIf = "regForm.controls['emailid'].touched && regForm.controls['emailid'].hasError('required')">Email address is required</span>
+        <span class="font-italic" *ngIf = "regForm.controls['emailid'].hasError('email')">Please enter valid email address</span>
+      </div>
+
+      <div class="form-group">
+        <label for="pass">Password: *</label>
+        <input type="password" class="form-control" placeholder="Password" formControlName="password" id="pass">
+      </div>
+  
+      <button type="submit" class="btn btn-success" [disabled]="regForm.invalid" (click)="postdata()">Register</button>
+    </form>
+  </div>
+    <br>
+</div>
+  

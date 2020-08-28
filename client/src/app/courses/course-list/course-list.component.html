@@ -1,0 +1,130 @@
+<div class="container-fluid text-center pt-5 px-5">
+    <div class="row">
+        <div class="col-md-4 mb-5" *ngFor="let entry of allEntries; let i = index">
+            <div class="card">
+                <div class="card-header p-0">
+                    <img src="http://localhost:4000/uploads/{{ entry.image }}" alt="{{ entry.image }}" class="w-100 img-fluid img-thumbnail">      
+                </div>
+                <div class="card-body">
+                    <h3>{{ entry.title }}</h3>
+                    <p>by <i>{{ entry.author }}</i></p>
+                    <p>{{ entry.short_descrip }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-danger text-white" routerLink="/courses/{{ entry._id }}" routerLinkActive="active" (click)="sendEntry(entry)">Read more...</a>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+    <!-- <br> -->
+
+</div>
+<br>
+
+
+
+<!-- <div class="container-fluid text-center pt-5 px-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header p-0">
+                    <img src="../../../assets/Images/Angular9.jpg" alt="Angular 9" class="w-100 img-fluid img-thumbnail">      
+                </div>
+                <div class="card-body">
+                    <h3>Angular 9 Full Course</h3>
+                    <p>by <i>IT Tutorials</i></p>
+                    <p>Angular is an app-design framework and development platform for creating efficient and sophisticated single-page apps.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-danger text-white" routerLink="/courses/angular9" routerLinkActive="active" >Read more...<app-course-detail *ngIf="false" [childVar]="dummy"></app-course-detail></a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header p-0">
+                    <img src="../../../assets/Images/CSS3.jpeg" alt="CSS 3" class="w-100 img-fluid img-thumbnail">
+                </div>
+                <div class="card-body">
+                    <h3>CSS 3 Full Course</h3>
+                    <p>by <i>IT Tutorials</i></p>
+                    <p>CSS is a language that describes the style of an HTML document. CSS describes how HTML elements should be displayed.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-danger text-white" routerLink="/courses/css3" routerLinkActive="active" >Read more...</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header p-0">
+                    <img src="../../../assets/Images/HTML5.png" alt="HTML 5" class="w-100 img-fluid img-thumbnail">
+                </div>
+                <div class="card-body">
+                    <h3>HTML 5 Full Course</h3>
+                    <p>by <i>IT Tutorials</i></p>
+                    <p>HTML5 is a markup language used for structuring and presenting content on the World Wide Web. HTML5 was the fifth and last major version of HTML.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-danger text-white" routerLink="/courses/html5" routerLinkActive="active" >Read more...</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header p-0">
+                    <img src="../../../assets/Images/NodeJS.png" alt="NodeJS" class="w-100 img-fluid img-thumbnail">
+                </div>
+                <div class="card-body">
+                    <h3>NodeJS Full Course</h3>
+                    <p>by <i>IT Tutorials</i></p>
+                    <p>Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-danger text-white" routerLink="/courses/nodejs" routerLinkActive="active" >Read more...</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header p-0">
+                    <img src="../../../assets/Images/Bootstrap4.jpeg" alt="Bootstrap 4" class="w-100 img-fluid img-thumbnail">
+                </div>
+                <div class="card-body">
+                    <h3>Bootstrap 4 Full Course</h3>
+                    <p>by <i>IT Tutorials</i></p>
+                    <p>Bootstrap 4 is the newest version of Bootstrap, which is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-danger text-white" routerLink="/courses/bootstrap4" routerLinkActive="active" >Read more...</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header p-0">
+                    <img src="../../../assets/Images/Typescript.jpeg" alt="Typescript" class="w-100 img-fluid img-thumbnail">
+                </div>
+                <div class="card-body">
+                    <h3>Typescript Full Course</h3>
+                    <p>by <i>IT Tutorials</i></p>
+                    <p>TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-danger text-white" routerLink="/courses/typescript" routerLinkActive="active" >Read more...</a>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</div>
+<br> -->

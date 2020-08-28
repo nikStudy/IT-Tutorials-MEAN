@@ -1,0 +1,33 @@
+<div class="container-fluid pt-5 px-5">
+    <div class="row">
+        <div class="col-md-8" >
+            <div class="card">
+                <div class="card-header p-0">
+                    <h3>{{ entry?.title }}</h3>
+                    <p>by <i>{{ entry?.author }}</i> on <i>{{ entry?.enteredDate | date }}</i></p>
+                    <div *ngIf="loading else loaded">
+                        loading....
+                    </div>
+                    <ng-template #loaded>
+                        <img  src="http://localhost:4000/uploads/{{ entry?.image }}" alt="{{ entry?.image }}" class="img-fluid">      
+                    </ng-template>
+                </div>
+                <div class="card-body mt-4 text-justify">
+                    <p class="description">{{ entry?.full_descrip }}</p>
+                    <!-- <p>Angular is an app-design framework and development platform for creating efficient and sophisticated single-page apps. Angular (commonly referred to as "Angular 2+" or "Angular v2 and above") is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.</p>
+                    <p>Launched for the first time in 2009, Angular has finally released its latest version, Angular 9 on February 7th, 2020. Angular is the most popular Javascript framework, mainly responsible for developing front-end desktop web apps or single-page applications, giving rise to every Angular Development Company in the world. Backed by Google, Angular has been evolved over the years into a fully grown and well-developed platform. The consolidated collection of ideas is much needed for progressive web development.</p>
+                    <p>For developers across the globe, Angular is the first choice for the front end development. It thus becomes highly crucial for the team to fix bugs and modify the already existing framework. Hence, a new version of the angular release every six months.</p>
+                    <p>So what's new in Angular 9? In this new update, all the existing drawbacks have been modified. Lot of factors have affected the previous versions of Angular. For example, large bundle files that have negatively impacted download times, application performance and user experience. So what the Angular team is doing to solve the large size of the final bundles? Enter Ivy!</p> -->
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-success text-white">Next</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <app-course-recent></app-course-recent>
+            <app-course-categories></app-course-categories>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.card {
+    margin-bottom: 40px;
+    border: none;
+}
+
+.card-header, .card-body, .card-footer {
+    background-color: #ffffff;
+    border: none;
+    padding: 0;
+}
+
+img {
+    height: 300px;
+}
+
+a:hover {
+    color: green !important;
+    background-color: #ffffff;
+    border-color: green;
+}
+
+.description {
+    white-space: pre-line;
+}

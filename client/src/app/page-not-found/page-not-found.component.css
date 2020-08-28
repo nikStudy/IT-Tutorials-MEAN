@@ -1,0 +1,11 @@
+div.container {
+    height: 420px;
+    margin-top: 50px;
+}
+
+/* Set height to 'auto' for smaller screen sizes */
+@media screen and (max-width: 576px) {
+    div.container {
+        height: auto;
+    }    
+}
